@@ -1,4 +1,4 @@
-package com.leetcode.dsakotin.my_daily_leetcode
+package com.leetcode.dsakotin.my_daily_leetcode.array
 
 import kotlin.math.max
 import kotlin.math.min
