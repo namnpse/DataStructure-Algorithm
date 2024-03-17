@@ -1,9 +1,6 @@
 package com.leetcode.dsajava.my_daily_leetcode_challenge.linked_list;
 
-import com.leetcode.dsajava.daily_leetcode_challenge.linked_list.ListNode;
-
-import java.util.HashMap;
-import java.util.Map;
+import com.leetcode.dsajava.leetcode.linked_list.ListNode;
 
 public class RemoveDuplicatesFromSortedList_83 {
 
