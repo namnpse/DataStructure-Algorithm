@@ -1,37 +1,12 @@
 package com.leetcode.dsajava.course.common_50_probs;
 
+import com.leetcode.dsajava.course.common_50_probs.common.LinkedList;
+import com.leetcode.dsajava.course.common_50_probs.common.Node;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class PalindromeLinkedList_11 {
-
-    // section 11
-    static class Node {
-        int data;
-        Node next;
-
-        Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
-
-        Node(int data, Node next) {
-            this.data = data;
-            this.next = next;
-        }
-    }
-
-    static class LinkedList {
-        Node head;
-
-        LinkedList() {
-            this.head = null;
-        }
-
-        LinkedList(Node head) {
-            this.head = head;
-        }
-    }
 
     // section 11: Palindrome Linked List
     public boolean isPalindromeList(LinkedList list) {
