@@ -46,4 +46,17 @@ public class CanJump_23 {
 
         return dp[n - 1];
     }
+
+    // C3: O(n)
+    public static boolean canJump3(int[] arr) {
+        int maxIndex = 0;
+        int n = arr.length;
+
+        for (int i = 0; i < n; i++) {
+            if (i > maxIndex) return false;
+            maxIndex = Math.max(i + arr[i], maxIndex);
+        }
+
+        return maxIndex >= n - 1;
+    }
 }
