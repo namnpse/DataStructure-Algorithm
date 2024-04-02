@@ -59,4 +59,37 @@ public class CanJump_23 {
 
         return maxIndex >= n - 1;
     }
+
+    // C4: O(n^2) (NOT good as C3)
+    // using Graph and BFS Graph
+    public static boolean canJump4(int[] arr) {
+        Graph graph = new Graph();
+        int n = arr.length;
+        for (int i = 0; i < n; i++) {
+            ArrayList<Integer> vertexes = new ArrayList<>();
+            for (int j = 1; j < arr[i] + 1; j++) {
+                if (i + j < n)
+                    vertexes.add(i + j);
+            }
+            graph.adjList.put(i, vertexes);
+        }
+
+        boolean[] visited = new boolean[graph.adjList.size()];
+
+        // BFS
+        Queue<Integer> queue = new java.util.LinkedList<>();
+        queue.add(0);
+
+        while (!queue.isEmpty()) {
+            int top = queue.poll();
+            System.out.println(top);
+            visited[top] = true;
+            for (Integer vertex : graph.adjList.get(top)) {
+                if (!visited[vertex]) {
+                    queue.add(vertex);
+                }
+            }
+        }
+        return visited[n - 1];
+    }
 }
