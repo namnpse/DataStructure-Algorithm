@@ -1,6 +1,7 @@
 package com.leetcode.dsajava.course.common_50_probs;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class NextGreaterPermutation_37 {
@@ -25,5 +26,19 @@ public class NextGreaterPermutation_37 {
             Collections.swap(arr, left++, right--);
         }
         return arr;
+    }
+
+    static ArrayList<ArrayList<Integer>> getPermutations(ArrayList<Integer> arr) {
+        if (arr.size() < 2) return new ArrayList<ArrayList<Integer>>(Arrays.asList(arr));
+        Collections.sort(arr);
+        ArrayList<ArrayList<Integer>> permutations = new ArrayList<>();
+        permutations.add((ArrayList<Integer>) arr.clone());
+        ArrayList<Integer> greatestPermutation = (ArrayList<Integer>) arr.clone();
+        Collections.reverse(greatestPermutation);
+        while (!arr.equals(greatestPermutation)) {
+            arr = getNextGreaterPermutation(arr);
+            permutations.add((ArrayList<Integer>) arr.clone());
+        }
+        return permutations;
     }
 }
